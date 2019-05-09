@@ -29,15 +29,21 @@ public class MainActivity extends AppCompatActivity {
         btnFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = null;
 
-                fragment = new BlankFragment();
+                // can do this
+//                Fragment fragment = null;
+//
+//                fragment = new BlankFragment();
+//
+//                if(fragment != null){
+//                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                    ft.replace(R.id.flcontent, fragment);
+//                    ft.commit();
+//                }
 
-                if(fragment != null){
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.flcontent, fragment);
-                    ft.commit();
-                }
+                //or this
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.flcontent, new BlankFragment()).commit();
             }
         });
     }
